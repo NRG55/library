@@ -1,10 +1,11 @@
 /* .library {
-  
+
 } */
 
-.new-book-element {
+.new-book-element, .title {
     height: 40px;
     width: 200px;
     border: solid 2px black;   
 }
+
 
