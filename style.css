@@ -1,11 +1,34 @@
-/* .library {
+header, main {
+    display: flex;
+    justify-content: center;
+}
 
-} */
+main {
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
 
 .new-book-element, .title {
     height: 40px;
     width: 200px;
     border: solid 2px black;   
+}
+
+.modal {
+    display: none;
+    position: fixed;   
+    top: 0;    
+    background-color: white;  
+    margin-top: 30vh;   
+}
+
+.book {
+    display: flex;
+}
+
+.book {
+  white-space: pre;    
 }
 
 
