@@ -1,34 +1,142 @@
-header, main {
-    display: flex;
-    justify-content: center;
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(244, 245, 229); 
+    min-height: 100%; 
 }
+
+header {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    background-color: rgb(208, 211, 152);
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;    
+    margin-left: 40px;
+    font-weight: 100;
+    color: rgb(60, 87, 60);
+}
+
+.img-book {
+    height: 43px;
+    margin-right: 8px;
+}
+
 
 main {
+    display: flex;
+    justify-content: center; 
     flex-direction: column;
     align-items: center;
-    justify-items: center;
+    justify-items: center;          
 }
 
-.new-book-element, .title {
-    height: 40px;
-    width: 200px;
-    border: solid 2px black;   
+
+#btn-new-book {
+    cursor: pointer;
+    border: none;
+    background-image: url("images/book-plus.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0);
+    margin-left: 8px;   
+    height: 30px;
+    width:  30px;   
+}
+
+.add-book {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 40px;
 }
 
 .modal {
-    display: none;
+    /* display: none; */
+    border: none;
     position: fixed;   
     top: 0;    
-    background-color: white;  
-    margin-top: 30vh;   
+    background-color: rgb(240, 241, 216);  
+    margin-top: 20vh;
+    width: 300px;
+    text-align: center; 
+    border-radius: 8px;    
 }
 
 .book {
     display: flex;
+    /* white-space: pre; */
+  
+
 }
 
-.book {
-  white-space: pre;    
+.book-div {
+    display: flex;
+    /* flex-direction: column;    */
+    padding-top: 20px; 
+    gap: 20px; 
+
+  
+}
+
+.book-title {
+    /* box-sizing: border-box;
+    display: block; */
+    width: 100px;
+    overflow-wrap: break-word;
+  
+  
+}
+
+.form-add-book {
+    display: flex;
+    flex-direction: column;   
+    padding: 20px; 
+    gap: 20px;  
+}
+
+.form-input {
+    border: none;
+    outline: none;
+    /* cursor: text; */
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.btn-submit-form {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(208, 211, 152);
+    padding: 8px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-submit-form:hover {
+    filter: brightness(96%);
 }
 
 
+ h3 {
+    /* text-align: center;     */
+    margin: 0;
+ }
+
+ /* .img-book {
+    width: 42px;
+    padding-right: 20px;
+ }
+  */
+
+table, tr, td {
+    border: solid 1px black;
+}

@@ -9,34 +9,62 @@
 </head>
 <body>
     <header>
-        <h1>My Library</h1>        
+        <div class="logo-title">
+            <img class="img-book" src="images/book.svg" alt=""> 
+            <h1>My Library</h1> 
+        </div> 
+        <div class="add-book">
+            <h4>Add book</h4>
+            <button id="btn-new-book"></button>             
+        </div>              
     </header>
-    <main> 
-        <div><button id="btn-new-book">NEW BOOK</button></div>       
-        <div class="books-container"></div>  
-        <div class="modal">
-            <form class="form" id="modal">                
-                <div>
-                    <label for="title">Title</label>
-                    <input type="text" id="title">
-                </div>
-                <div>
-                    <label for="author">Author</label>
-                    <input type="text" id="author">
-                </div>
-                <div>
-                    <label for="pages">Number of pages</label>
-                    <input type="text" id="pages">
-                </div>
-                <div>
-                    <label for="read">Read</label>
-                    <input type="checkbox" id="read">
-                </div>
-                <div>
-                    <button type="submit" class="btn-submit-form">Submit</button>
-                </div>
+    <main>        
+        <dialog class="modal">
+            <form class="form-add-book" method="dialog" id="modal">
+                <h3>ADD BOOK</h3>                
+                <input
+                class="form-input" 
+                type="text" 
+                id="title"
+                placeholder="Title"              
+                />                   
+                <input
+                class="form-input"  
+                type="text" 
+                id="author"
+                placeholder="Author"
+                />                    
+                <input 
+                class="form-input" 
+                type="text" 
+                id="pages"
+                placeholder="Pages"
+                />               
+                <div class="form-checkbox">
+                    <label for="checkbox-read">Book read?</label>
+                    <input 
+                      type="checkbox" 
+                      id="checkbox-read"
+                      name="read"
+                      value="not read"
+                      />
+                </div>                
+                <button type="submit" class="btn-submit-form">SUBMIT</button>               
             </form>
-        </div>
+        </dialog>
+        <div>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tbody class="books-table"></tbody>
+            </table>
+        </div>  
     </main>      
 </body>
 </html>
+
