@@ -5,28 +5,75 @@ body{
     min-height: 100%; 
 }
 
+/* -----------HEADER------------- */
+
 header {
     display: flex;
-    height: 100px;
+    height: 80px;
     align-items: center;
-    justify-content: space-between;
-    font-size: 20px;
-    background-color: rgb(208, 211, 152);
+    justify-content: space-around;
+    font-size: 16px;
+    background-color: rgb(208, 211, 152);    
+}
+
+h4 {
+    font-weight: 100;
+    font-size: 18px;
+    color: rgb(60, 87, 60);
+}
+
+.login {
+    margin-right: 5%;
 }
 
 .logo-title {
     display: flex;
     align-items: center;    
-    margin-left: 40px;
     font-weight: 100;
     color: rgb(60, 87, 60);
 }
 
-.img-book {
-    height: 43px;
+.add-book,
+.login {
+    display: flex;
+    align-items: center;    
+}
+
+.image-book {
+    height: 40px;
     margin-right: 8px;
 }
 
+.button-add-book,
+.button-login {
+    cursor: pointer;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0);
+    margin-left: 8px;   
+    height: 30px;
+    width:  30px;    
+}
+
+.button-add-book {   
+    background-image: url("images/book-plus.svg");   
+}
+
+.button-login {   
+    background-image: url("images/login.svg");    
+}
+
+.button-add-book:hover {
+    background-image: url("images/book-plus-hover.svg");
+}
+
+.button-login:hover {
+    background-image: url("images/login-hover.svg");
+}
+ 
+/* ---------------MAIN------------------ */
 
 main {
     display: flex;
@@ -36,29 +83,9 @@ main {
     justify-items: center;          
 }
 
+/* -------------MODAL FORM---------------- */
 
-#btn-new-book {
-    cursor: pointer;
-    border: none;
-    background-image: url("images/book-plus.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0);
-    margin-left: 8px;   
-    height: 30px;
-    width:  30px;   
-}
-
-.add-book {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 40px;
-}
-
-.modal {
-    /* display: none; */
+.modal {  
     border: none;
     position: fixed;   
     top: 0;    
@@ -67,31 +94,6 @@ main {
     width: 300px;
     text-align: center; 
     border-radius: 8px;    
-}
-
-.book {
-    display: flex;
-    /* white-space: pre; */
-  
-
-}
-
-.book-div {
-    display: flex;
-    /* flex-direction: column;    */
-    padding-top: 20px; 
-    gap: 20px; 
-
-  
-}
-
-.book-title {
-    /* box-sizing: border-box;
-    display: block; */
-    width: 100px;
-    overflow-wrap: break-word;
-  
-  
 }
 
 .form-add-book {
@@ -103,14 +105,13 @@ main {
 
 .form-input {
     border: none;
-    outline: none;
-    /* cursor: text; */
+    outline: none;  
     font-size: 18px;
     padding: 8px;
     border-radius: 8px;
 }
 
-.btn-submit-form {
+.button-submit-form {
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -121,22 +122,112 @@ main {
     color: white;
 }
 
-.btn-submit-form:hover {
+.button-submit-form:hover {
     filter: brightness(96%);
 }
 
-
- h3 {
-    /* text-align: center;     */
-    margin: 0;
- }
-
- /* .img-book {
-    width: 42px;
-    padding-right: 20px;
- }
-  */
-
-table, tr, td {
-    border: solid 1px black;
+.error {
+    color: red;
+    font-weight: 100;    
 }
+
+h3 {  
+    margin: 0;
+} 
+
+/* --------------TABLE-CONTENT-------------- */
+
+.book-title {   
+    width: 100px;
+    overflow-wrap: break-word;  
+}
+
+.button-status {
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    
+}
+
+.button-remove {
+    cursor: pointer;
+    border: none;
+    background-image: url("images/bin.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0);
+    height: 20px;
+    width:  20px;   
+}
+
+.read {
+    color: green;
+}
+
+.not-read {
+    color: red;
+}
+
+/* .green {
+    color: green;
+} */
+
+/* --------------TABLE----------------  */
+
+table {
+    border-collapse: collapse;
+    margin-top: 50px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 700px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+} 
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color:rgb(240, 241, 216);
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(208, 211, 152);
+}
+
+.table-header-pages, 
+.table-header-status, 
+.table-header-remove {
+    text-align: center;   
+}
+
+.table-header-title,
+.table-header-author {
+    text-align: left;
+}
+
+.table-header-title {
+    width: 240px;
+    max-width: 240px;
+    word-wrap: break-word;    
+}
+
+.table-header-author {
+    width: 140px;
+    max-width: 140px;
+    word-wrap: break-word;    
+}
+
+.table-header-status {
+    width: 80px;
+}
+
+
+
+

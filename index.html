@@ -10,23 +10,29 @@
 <body>
     <header>
         <div class="logo-title">
-            <img class="img-book" src="images/book.svg" alt=""> 
-            <h1>My Library</h1> 
+            <img class="image-book" src="images/book.svg" alt=""> 
+            <h1>My library</h1> 
         </div> 
         <div class="add-book">
-            <h4>Add book</h4>
-            <button id="btn-new-book"></button>             
-        </div>              
+            <h4>add book</h4>
+            <button class="button-add-book"></button>             
+        </div> 
+        <div class="login">
+            <h4>login</h4>
+            <button class="button-login"></button> 
+
+        </div>             
     </header>
     <main>        
         <dialog class="modal">
-            <form class="form-add-book" method="dialog" id="modal">
-                <h3>ADD BOOK</h3>                
+            <form class="form-add-book" method="dialog" id="modal" name="form">
+                <h3 id="error">ADD BOOK</h3>                
                 <input
-                class="form-input" 
+                class="form-input"
+                name="form-input" 
                 type="text" 
                 id="title"
-                placeholder="Title"              
+                placeholder="Title"                            
                 />                   
                 <input
                 class="form-input"  
@@ -36,7 +42,8 @@
                 />                    
                 <input 
                 class="form-input" 
-                type="text" 
+                type="number"
+                min="0"                
                 id="pages"
                 placeholder="Pages"
                 />               
@@ -49,17 +56,17 @@
                       value="not read"
                       />
                 </div>                
-                <button type="submit" class="btn-submit-form">SUBMIT</button>               
+                <button type="submit" class="button-submit-form">SUBMIT</button>               
             </form>
         </dialog>
         <div>
             <table>
                 <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Pages</th>
-                    <th></th>
-                    <th></th>
+                    <th class="table-header-title">Title</th>
+                    <th class="table-header-author">Author</th>
+                    <th class="table-header-pages">Pages</th>
+                    <th class="table-header-status">Status</th>
+                    <th class="table-header-remove">Remove</th>
                 </tr>
                 <tbody class="books-table"></tbody>
             </table>
