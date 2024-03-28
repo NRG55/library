@@ -20,40 +20,42 @@
         <div class="login">
             <h4>login</h4>
             <button class="button-login"></button> 
-
         </div>             
     </header>
     <main>        
         <dialog class="modal">
-            <form class="form-add-book" method="dialog" id="modal" name="form">
+            <form 
+                  class="form-add-book" 
+                  method="dialog" 
+                  id="form" 
+                  name="form">
                 <h3 id="error">ADD BOOK</h3>                
                 <input
-                class="form-input"
-                name="form-input" 
-                type="text" 
-                id="title"
-                placeholder="Title"                            
+                    class="form-input"
+                    name="form-input" 
+                    type="text" 
+                    id="title"
+                    placeholder="Title"                            
                 />                   
                 <input
-                class="form-input"  
-                type="text" 
-                id="author"
-                placeholder="Author"
+                    class="form-input"  
+                    type="text" 
+                    id="author"
+                    placeholder="Author"
                 />                    
                 <input 
-                class="form-input" 
-                type="number"
-                min="0"                
-                id="pages"
-                placeholder="Pages"
+                    class="form-input" 
+                    type="number"
+                    min="0"                
+                    id="pages"
+                    placeholder="Pages"
                 />               
                 <div class="form-checkbox">
                     <label for="checkbox-read">Book read?</label>
                     <input 
                       type="checkbox" 
                       id="checkbox-read"
-                      name="read"
-                      value="not read"
+                      name="read"                      
                       />
                 </div>                
                 <button type="submit" class="button-submit-form">SUBMIT</button>               
