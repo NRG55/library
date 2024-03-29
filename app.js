@@ -5,7 +5,11 @@ const pages = document.querySelector('#pages');
 const read = document.querySelector('#checkbox-read');
 const tbody = document.querySelector('.books-table');
 const btnNewBook = document.querySelector('.button-add-book');
+const buttonCloseForm = document.getElementById('button-close-form');
 const dialogModal = document.querySelector('.modal');
+const errorText = document.getElementById('error');
+const titleInputValue = document.forms['form']['form-input'];
+
 
 
 Book.id = 0;
@@ -13,7 +17,7 @@ let myLibrary = [
     new Book('Don Quixote', 'Miguel de Cervantes', 1072, true),
     new Book("Alice's Adventures in Wonderland", 'Lewis Carroll', 352, false),
     new Book("The Adventures of Tom Sawyer", 'Mark Twain', 168, true),
-    new Book("GuLLiver's Travels", 'Jonathan Swift', 336, false),
+    new Book("Gulliver's Travels", 'Jonathan Swift', 336, false),
 ];
 
 function Book(title, author, pages, read) {
@@ -78,14 +82,14 @@ function deleteBook(book) {
 
 function resetForm() {
     const form = document.getElementById('form');   
-    form.reset();  
+    form.reset();
+    errorText.innerHTML = "ADD BOOK";
+    errorText.classList.remove('error');          
 }
 
-function iSinputValid() {
-    const value = document.forms['form']['form-input'].value;
-    const errorText = document.getElementById('error');
+function isInputValid() {    
 
-    if (!value) {         
+    if (!titleInputValue.value) {         
         errorText.innerHTML = "Please enter your title";
         errorText.classList.add('error');
         document.getElementById('title').focus();         
@@ -104,7 +108,7 @@ btnNewBook.addEventListener('click', () => {
 dialogModal.addEventListener('submit', function(event) {
     event.preventDefault(); 
 
-    if (!iSinputValid()) {
+    if (!isInputValid()) {
         return;
     }
 
@@ -112,6 +116,11 @@ dialogModal.addEventListener('submit', function(event) {
     render();
     resetForm();    
     dialogModal.close();          
+})
+
+buttonCloseForm.addEventListener('click', () => {   
+    resetForm();
+    dialogModal.close();     
 })
 
 render();
