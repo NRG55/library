@@ -118,9 +118,26 @@ dialogModal.addEventListener('submit', function(event) {
     dialogModal.close();          
 })
 
-buttonCloseForm.addEventListener('click', () => {   
+dialogModal.addEventListener('click', (event) => {
+    if (event.target === dialogModal) {
+        render();
+        resetForm();    
+        dialogModal.close();
+    }
+})
+
+buttonCloseForm.addEventListener('click', () => { 
+    if (!isInputValid()) {
+        return;
+    }
+
+    addBookToLibrary();
+    render();
+    resetForm();      
     resetForm();
     dialogModal.close();     
 })
+
+
 
 render();
