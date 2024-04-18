@@ -10,9 +10,18 @@ const dialogModal = document.querySelector('.modal');
 const errorText = document.getElementById('error');
 const titleInputValue = document.forms['form']['form-input'];
 
-
+class Book {
+    constructor(title, author, pages, read) {
+    this.id = `book-${++Book.id}`; 
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    }
+}
 
 Book.id = 0;
+
 let myLibrary = [
     new Book('Don Quixote', 'Miguel de Cervantes', 1072, true),
     new Book("Alice's Adventures in Wonderland", 'Lewis Carroll', 352, false),
@@ -20,17 +29,9 @@ let myLibrary = [
     new Book("Gulliver's Travels", 'Jonathan Swift', 336, false),
 ];
 
-function Book(title, author, pages, read) {
-    this.id = `book-${++Book.id}`; 
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-
 function addBookToLibrary() { 
     const myBook = new Book(title.value, author.value, pages.value, read.checked);   
-    myLibrary.push(myBook);
+    myLibrary.push(myBook);   
 } 
 
 function createBookHTML(book) {
